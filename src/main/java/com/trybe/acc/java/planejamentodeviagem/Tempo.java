@@ -25,11 +25,10 @@ public class Tempo {
   }
 
   /**
-   * retonarDesembarqueHorarioLocalDestino.
-   * 
-   * Transforma todos os fusos horarios disponíveis na classe ZoneId em um array de Strings, onde
-   * nos percorremos em busca do identificador do fuso horario do nosso destino, uma vez com esse
-   * fuso horario, podemos recuperar o horario local de desembarque no nosso destino
+   * retonarDesembarqueHorarioLocalDestino. Transforma todos os fusos horarios disponíveis na classe
+   * ZoneId em um array de Strings, onde nos percorremos em busca do identificador do fuso horario
+   * do nosso destino, uma vez com esse fuso horario, podemos recuperar o horario local de
+   * desembarque no nosso destino.
    */
   public String retonarDesembarqueHorarioLocalDestino() {
 
@@ -39,7 +38,10 @@ public class Tempo {
     int indiceFusoHorarioOrigem = 0;
 
     for (int i = 0; i < fusosHorarios.length; i++) {
-      /* Implemente sua solução aqui */
+      if (fusosHorarios[i].contains(this.origem)) {
+        indiceFusoHorarioOrigem = i;
+        break;
+      }
     }
 
     String fusoHorarioOrigem = fusosHorarios[indiceFusoHorarioOrigem];
@@ -51,7 +53,10 @@ public class Tempo {
     int indiceFusoHorarioDestino = 0;
 
     for (int i = 0; i < fusosHorarios.length; i++) {
-      /* Implemente sua solução aqui */
+      if (fusosHorarios[i].contains(this.destino)) {
+        indiceFusoHorarioDestino = i;
+        break;
+      }
     }
 
     String fusoHorarioDestino = fusosHorarios[indiceFusoHorarioDestino];
@@ -72,7 +77,10 @@ public class Tempo {
     int indiceFusoHorarioOrigem = 0;
 
     for (int i = 0; i < fusosHorarios.length; i++) {
-      /* Implemente sua solução aqui */
+      if (this.duracao == i) {
+        break;
+      }
+      indiceFusoHorarioOrigem++;
     }
 
     String fusoHorarioOrigem = fusosHorarios[indiceFusoHorarioOrigem];
